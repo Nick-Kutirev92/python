@@ -1,17 +1,20 @@
 profit = float(input('Введите месячную выручку: '))
-cost = float(input('Введите месячные издержки: '))
+costs = float(input('Введите месячные издержки: '))
 
-if profit > cost:
-    print('Ваша фирма работает прибыльно')
-elif profit < cost:
+result = profit - costs
+if result > costs:
+    print('Ваша фирма работает прибыльно, ваша выручка состовляет', result)
+elif result < costs:
     print('Ваша фирма работает в убыток')
-elif profit == cost:
+elif result == costs:
     print('Ваша прибыль равна издержкам')
 
-if profit > cost:
-    rent_profit = profit / cost
+if profit > costs:
+    rent_profit = profit / costs
     print(f'Рентабельность выручки составляет: {rent_profit}')
 
+
+
 workers = int(input('Введите количество сотрудников: '))
-worker_profit = profit / workers
+worker_profit = result / workers
 print(f'Один сотрудник приносит фирме: {worker_profit} ')
